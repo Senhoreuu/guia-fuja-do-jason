@@ -1,0 +1,237 @@
+{
+    "Lobby": {
+        "teles": 4,
+        "rooms": [
+            "Pântano",
+            "Caverna",
+            "Castelo",
+            "Sótão"
+        ]
+    },
+    "Castelo": {
+        "teles": 3,
+        "rooms": [
+            "Caverna",
+            "Cemitério",
+            "Pântano"
+        ]
+    },
+    "Caverna": {
+        "teles": 2,
+        "rooms": [
+            "Castelo",
+            "Ponte"
+        ]
+    },
+    "Sótão": {
+        "teles": 3,
+        "rooms": [
+            "Mistério",
+            "Assombração",
+            "Fantasma"
+        ]
+    },
+    "Mistério": {
+        "teles": 2,
+        "rooms": [
+            "Choice",
+            "Calafrios"
+        ]
+    },
+    "Pântano": {
+        "teles": 3,
+        "rooms": [
+            "Caverna",
+            "Lobby",
+            "Antro"
+        ]
+    },
+    "Acampamento": {
+        "teles": 3,
+        "rooms": [
+            "Choice",
+            "Fantasma",
+            "Hotel"
+        ]
+    },
+    "Choice": {
+        "teles": 3,
+        "rooms": [
+            "Lobby",
+            "Laboratório",
+            "Espinhos"
+        ]
+    },
+    "Corredor": {
+        "teles": 6,
+        "rooms": [
+            "Ponte",
+            "Hotel",
+            "Morte",
+            "Escuridão",
+            "Biblioteca",
+            "Fantasma"
+        ]
+    },
+    "Antro": {
+        "teles": 3,
+        "rooms": [
+            "Pântano",
+            "Escuridão",
+            "Sótão"
+        ]
+    },
+    "Inferno": {
+        "teles": 3,
+        "rooms": [
+            "Hotel",
+            "Cemitério",
+            "Morte"
+        ]
+    },
+    "Selva": {
+        "teles": 2,
+        "rooms": [
+            "Espinhos",
+            "Biblioteca"
+        ]
+    },
+    "Biblioteca": {
+        "teles": 2,
+        "rooms": [
+            "Laboratório",
+            "Selva"
+        ]
+    },
+    "Hotel": {
+        "teles": 3,
+        "rooms": [
+            "Corredor",
+            "Fantasma",
+            "Inferno"
+        ]
+    },
+    "Laboratório": {
+        "teles": 2,
+        "rooms": [
+            "Fantasma",
+            "Biblioteca"
+        ]
+    },
+    "Apocálipse": {
+        "teles": 2,
+        "rooms": [
+            "Morte",
+            "Veneno"
+        ]
+    },
+    "Mortinhos": {
+        "teles": 3,
+        "rooms": [
+            "Castelo",
+            "Fantasma",
+            "Escuridão"
+        ]
+    },
+    "Veneno": {
+        "teles": 3,
+        "rooms": [
+            "Morte",
+            "Calafrios",
+            "Mistério"
+        ]
+    },
+    "Picnic": {
+        "teles": 2,
+        "rooms": [
+            "Selva",
+            "Calafrios"
+        ]
+    },
+    "Fantasma": {
+        "teles": 5,
+        "rooms": [
+            "Pântano",
+            "Choice",
+            "Acampamento",
+            "Mortinhos",
+            "Corredor"
+        ]
+    },
+    "Morte": {
+        "teles": 3,
+        "rooms": [
+            "Veneno",
+            "Apocálipse",
+            "Corredor"
+        ]
+    },
+    "Cemitério": {
+        "teles": 3,
+        "rooms": [
+            "Castelo",
+            "Antro",
+            "Ponte"
+        ]
+    },
+    "Rua": {
+        "teles": 2,
+        "rooms": [
+            "Calafrios",
+            "Tempestade"
+        ]
+    },
+    "Escuridão": {
+        "teles": 3,
+        "rooms": [
+            "Pântano",
+            "Hotel",
+            "Corredor"
+        ]
+    },
+    "Tempestade": {
+        "teles": 3,
+        "rooms": [
+            "Castelo",
+            "Biblioteca",
+            "Rua"
+        ]
+    },
+    "Espinhos": {
+        "teles": 2,
+        "rooms": [
+            "Choice",
+            "Selva"
+        ]
+    },
+    "Assombração": {
+        "teles": 3,
+        "rooms": [
+            "Pântano",
+            "Caverna",
+            "Apocálipse"
+        ]
+    },
+    "Calafrios": {
+        "teles": 2,
+        "rooms": [
+            "Mistério",
+            "Picnic"
+        ]
+    },
+    "Ponte": {
+        "teles": 3,
+        "rooms": [
+            "Caverna",
+            "Cemitério",
+            "Corredor"
+        ]
+    },
+    "Dangerzone": {
+        "teles": 2,
+        "rooms": [
+            "Escuridão",
+            "Assombração"
+        ]
+    }
+}

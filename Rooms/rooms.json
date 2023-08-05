@@ -1,0 +1,124 @@
+{
+    "rooms": [
+        {
+            "room_name": "Acampamento",
+            "room_id": 889904
+        },
+        {
+            "room_name": "Antro",
+            "room_id": 893118
+        },
+        {
+            "room_name": "Apocalipse",
+            "room_id": 899867
+        },
+        {
+            "room_name": "Assombração",
+            "room_id": 915847
+        },
+        {
+            "room_name": "Biblioteca",
+            "room_id": 893454
+        },
+        {
+            "room_name": "Calafrios",
+            "room_id": 924104
+        },
+        {
+            "room_name": "Castelo",
+            "room_id": 889766
+        },
+        {
+            "room_name": "Caverna",
+            "room_id": 889799
+        },
+        {
+            "room_name": "Cemitério",
+            "room_id": 913593
+        },
+        {
+            "room_name": "Choice",
+            "room_id": 892636
+        },
+        {
+            "room_name": "Corredor",
+            "room_id": 893095
+        },
+        {
+            "room_name": "Dangerzone",
+            "room_id": 996225
+        },
+        {
+            "room_name": "Escuridão",
+            "room_id": 914166
+        },
+        {
+            "room_name": "Espinhos",
+            "room_id": 915048
+        },
+        {
+            "room_name": "Fantasma",
+            "room_id": 912756
+        },
+        {
+            "room_name": "Hotel",
+            "room_id": 893728
+        },
+        {
+            "room_name": "Inferno",
+            "room_id": 893132
+        },
+        {
+            "room_name": "Laboratório",
+            "room_id": 893958
+        },
+        {
+            "room_name": "Lobby",
+            "room_id": 924213
+        },
+        {
+            "room_name": "Mistério",
+            "room_id": 889837
+        },
+        {
+            "room_name": "Morte",
+            "room_id": 913470
+        },
+        {
+            "room_name": "Mortinhos",
+            "room_id": 899870
+        },
+        {
+            "room_name": "Pântano",
+            "room_id": 889873
+        },
+        {
+            "room_name": "Picnic",
+            "room_id": 907233
+        },
+        {
+            "room_name": "Ponte",
+            "room_id": 996225
+        },
+        {
+            "room_name": "Rua",
+            "room_id": 913961
+        },
+        {
+            "room_name": "Sótão",
+            "room_id": 889823
+        },
+        {
+            "room_name": "Selva",
+            "room_id": 893148
+        },
+        {
+            "room_name": "Tempestade",
+            "room_id": 914201
+        },
+        {
+            "room_name": "Veneno",
+            "room_id": 907232
+        }
+    ]
+}
