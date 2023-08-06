@@ -1,5 +1,5 @@
 {
-    "Lobby": {
+    "lobby": {
         "teles": 4,
         "rooms": [
             "Pântano",
@@ -8,7 +8,7 @@
             "Sótão"
         ]
     },
-    "Castelo": {
+    "castelo": {
         "teles": 3,
         "rooms": [
             "Caverna",
@@ -16,14 +16,14 @@
             "Pântano"
         ]
     },
-    "Caverna": {
+    "caverna": {
         "teles": 2,
         "rooms": [
             "Castelo",
             "Ponte"
         ]
     },
-    "Sótão": {
+    "sotao": {
         "teles": 3,
         "rooms": [
             "Mistério",
@@ -31,14 +31,14 @@
             "Fantasma"
         ]
     },
-    "Mistério": {
+    "misterio": {
         "teles": 2,
         "rooms": [
             "Choice",
             "Calafrios"
         ]
     },
-    "Pântano": {
+    "pantano": {
         "teles": 3,
         "rooms": [
             "Caverna",
@@ -46,7 +46,7 @@
             "Antro"
         ]
     },
-    "Acampamento": {
+    "acampamento": {
         "teles": 3,
         "rooms": [
             "Choice",
@@ -54,7 +54,7 @@
             "Hotel"
         ]
     },
-    "Choice": {
+    "choice": {
         "teles": 3,
         "rooms": [
             "Lobby",
@@ -62,7 +62,7 @@
             "Espinhos"
         ]
     },
-    "Corredor": {
+    "corredor": {
         "teles": 6,
         "rooms": [
             "Ponte",
@@ -73,7 +73,7 @@
             "Fantasma"
         ]
     },
-    "Antro": {
+    "antro": {
         "teles": 3,
         "rooms": [
             "Pântano",
@@ -81,7 +81,7 @@
             "Sótão"
         ]
     },
-    "Inferno": {
+    "inferno": {
         "teles": 3,
         "rooms": [
             "Hotel",
@@ -89,21 +89,21 @@
             "Morte"
         ]
     },
-    "Selva": {
+    "selva": {
         "teles": 2,
         "rooms": [
             "Espinhos",
             "Biblioteca"
         ]
     },
-    "Biblioteca": {
+    "biblioteca": {
         "teles": 2,
         "rooms": [
             "Laboratório",
             "Selva"
         ]
     },
-    "Hotel": {
+    "hotel": {
         "teles": 3,
         "rooms": [
             "Corredor",
@@ -111,21 +111,21 @@
             "Inferno"
         ]
     },
-    "Laboratório": {
+    "laboratorio": {
         "teles": 2,
         "rooms": [
             "Fantasma",
             "Biblioteca"
         ]
     },
-    "Apocálipse": {
+    "apocalipse": {
         "teles": 2,
         "rooms": [
             "Morte",
             "Veneno"
         ]
     },
-    "Mortinhos": {
+    "mortinhos": {
         "teles": 3,
         "rooms": [
             "Castelo",
@@ -133,7 +133,7 @@
             "Escuridão"
         ]
     },
-    "Veneno": {
+    "veneno": {
         "teles": 3,
         "rooms": [
             "Morte",
@@ -141,14 +141,14 @@
             "Mistério"
         ]
     },
-    "Picnic": {
+    "picnic": {
         "teles": 2,
         "rooms": [
             "Selva",
             "Calafrios"
         ]
     },
-    "Fantasma": {
+    "fantasma": {
         "teles": 5,
         "rooms": [
             "Pântano",
@@ -158,7 +158,7 @@
             "Corredor"
         ]
     },
-    "Morte": {
+    "morte": {
         "teles": 3,
         "rooms": [
             "Veneno",
@@ -166,7 +166,7 @@
             "Corredor"
         ]
     },
-    "Cemitério": {
+    "cemiterio": {
         "teles": 3,
         "rooms": [
             "Castelo",
@@ -174,14 +174,14 @@
             "Ponte"
         ]
     },
-    "Rua": {
+    "rua": {
         "teles": 2,
         "rooms": [
             "Calafrios",
             "Tempestade"
         ]
     },
-    "Escuridão": {
+    "escuridao": {
         "teles": 3,
         "rooms": [
             "Pântano",
@@ -189,7 +189,7 @@
             "Corredor"
         ]
     },
-    "Tempestade": {
+    "tempestade": {
         "teles": 3,
         "rooms": [
             "Castelo",
@@ -197,14 +197,14 @@
             "Rua"
         ]
     },
-    "Espinhos": {
+    "espinhos": {
         "teles": 2,
         "rooms": [
             "Choice",
             "Selva"
         ]
     },
-    "Assombração": {
+    "assombracao": {
         "teles": 3,
         "rooms": [
             "Pântano",
@@ -212,14 +212,14 @@
             "Apocálipse"
         ]
     },
-    "Calafrios": {
+    "calafrios": {
         "teles": 2,
         "rooms": [
             "Mistério",
             "Picnic"
         ]
     },
-    "Ponte": {
+    "ponte": {
         "teles": 3,
         "rooms": [
             "Caverna",
@@ -227,7 +227,7 @@
             "Corredor"
         ]
     },
-    "Dangerzone": {
+    "dangerzone": {
         "teles": 2,
         "rooms": [
             "Escuridão",

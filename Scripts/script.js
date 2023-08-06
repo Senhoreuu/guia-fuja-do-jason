@@ -1,10 +1,25 @@
 let rooms_name = [];
 let cards = [];
+let tree = {};
+
+function normalize(text) {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function createTree(event) {
+    const id = event.currentTarget.id;
+    console.log(id);
+    if (!rooms_name.includes(id)) return;
+    const connections = tree[id].rooms;
+
+    const div = document.createElement('div');
+    div.classList.add('card-tree');
+}
 
 function createCard(room) {
     const div = document.createElement('div');
     div.classList.add('card');
-    div.setAttribute('onclick', 'createTree(event)');
+    div.addEventListener('click', createTree);
     div.setAttribute('data-aos', 'fade');
     div.setAttribute('id', room.id);
 
@@ -30,7 +45,7 @@ async function loadRooms() {
 
         const rooms = data.rooms.map((room) => {
             const room_name = room.room_name;
-            const normalized = room_name.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            const normalized = normalize(room_name);
             const link = prefix(normalized.toLowerCase());
 
             return {
@@ -61,15 +76,6 @@ function isElementInViewport(el) {
     return rect.top >= 0 && rect.bottom - 300 <= (window.innerHeight || document.documentElement.clientHeight);
 }
 
-function createTree(event) {
-    const id = event.currentTarget.id;
-    if (!rooms_name.includes(id)) return;
-    const connections = tree[id].rooms;
-
-    const div = document.createElement('div');
-    div.classList.add('card-tree');
-}
-
 function filterCards(searching) {
     const cards = document.querySelectorAll('div.card');
     const normalizedSearching = searching.toLowerCase();
@@ -97,6 +103,10 @@ function showAllCards() {
 async function initApp() {
     const rooms = await loadRooms();
     const article = document.querySelector('article');
+
+    await fetch('./Rooms/ways_tree.json')
+        .then(response => response.json())
+        .then(data => tree = data);
 
     rooms.forEach((room) => {
         rooms_name.push(room.id);

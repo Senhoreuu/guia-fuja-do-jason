@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap%27');
 
-
 :root {
     --var-primary-color: #4B0082;
     --var-second-color: #6702af;
     --var-third-color: #990000;
-    --var-fourth-color: #00003b;
+    --var-fourth-color: rgb(0, 0, 61);
     --var-fifth-color: #FFD700;
 }
 
@@ -22,6 +21,7 @@ nav {
     height: fit-content;
 
     margin-bottom: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 150, 1);
 }
 
 footer {
@@ -57,7 +57,7 @@ header {
     font-weight: 400;
     border-radius: .5rem;
 
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
@@ -82,16 +82,24 @@ h2 {
 
 ul {
     display: inline-flex;
-    margin-right: 20px;
+    gap: 30px;
+    justify-content: space-between;
 }
 
-a {
+.options {
+    display: inline-flex;
+    margin-right: 170px;
+}
+
+.option {
     color: var(--var-fifth-color);
     text-decoration: none;
     font-size: 20px;
+    font-weight: 600;
 }
 
-a:hover {
+.option:hover {
+    cursor: pointer;
     text-decoration: underline;
     transform: translateX(-5px);
     transition: 0.5s;
