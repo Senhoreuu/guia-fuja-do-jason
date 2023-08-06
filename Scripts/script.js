@@ -241,22 +241,20 @@ function scrollToBottom() {
     );
 
     const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    const scrollDuration = 1000; // Duração da animação em milissegundos
-    const scrollStep = Math.PI / (scrollDuration / 15); // Incremento do scroll em cada intervalo
+    const scrollStep = Math.PI / (100 / 20);
 
-    let scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    let scrollY = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
-    const scrollInterval = setInterval(() => {
-        const currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+    function scrollAnimation() {
+        scrollY = scrollY < docHeight - windowHeight ? scrollY + Math.sin(scrollStep) * 30 : docHeight - windowHeight;
+        window.scrollTo(0, scrollY);
 
-        if (currentPosition >= docHeight - windowHeight) {
-            clearInterval(scrollInterval);
-        } else {
-            scrollPosition += scrollStep;
-            document.documentElement.scrollTop = scrollPosition;
-            document.body.scrollTop = scrollPosition;
+        if (scrollY < docHeight - windowHeight) {
+            setTimeout(scrollAnimation, 15);
         }
-    }, 15);
+    }
+
+    scrollAnimation();
 }
 
 initApp();
