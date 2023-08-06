@@ -148,6 +148,8 @@ document.querySelector('#search').addEventListener('input', (input) => {
     card_container.style.width = '0%';
     card_container.style.height = '0%';
 
+    card_container.innerHTML = '';
+
     const searchText = input.target.value.trim();
     if (searchText === "") {
         footer.classList.remove('hide');
