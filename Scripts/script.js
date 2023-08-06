@@ -2,18 +2,56 @@ let rooms_name = [];
 let cards = [];
 let tree = {};
 
+const article = document.querySelector('article');
+const card_container = document.querySelector('.card-container');
+const header = document.querySelector('header');
+
 function normalize(text) {
     return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 }
 
 function createTree(event) {
     const id = event.currentTarget.id;
-    console.log(id);
     if (!rooms_name.includes(id)) return;
-    const connections = tree[id].rooms;
 
-    const div = document.createElement('div');
-    div.classList.add('card-tree');
+    showAllCards(false);
+    document.querySelector('footer').classList.add('hide');
+
+    const connections = tree[id].rooms;
+    
+    article.style.width = '0%';
+    card_container.style.width = '100%';
+    card_container.style.height = '100%';
+
+    let root = '';
+
+    for (const connection of connections) {
+        root += `<div class="center">
+                    <h2>${normalize(connection)}</h2>
+                    <div  class="card-tree">
+                        <img src="./images/${normalize(connection).toLowerCase()}.png" class="tree-image">
+                    </div>
+                </div>`;
+    }
+
+    const html = ` 
+                    <div class="main-root">
+                        <div class="center">
+                            <h2>${id}</h2>
+                            <div class="card-tree">
+                                <img src="./images/${id}.png">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="root">
+                        ${root}
+                    </div>
+                `;
+
+    card_container.innerHTML = html;
+
+    header.appendChild(card_container);
 }
 
 function createCard(room) {
@@ -92,11 +130,17 @@ function filterCards(searching) {
     });
 }
 
-function showAllCards() {
+function showAllCards(show = true) {
     const cards = document.querySelectorAll('div.card');
     cards.forEach((card) => {
-        card.classList.remove('hide');
-        card.classList.add('show');
+        if (show) {
+            card.classList.remove('hide');
+            card.classList.add('show');
+        }
+        else {
+            card.classList.add('hide');
+            card.classList.remove('show');
+        }
     });
 }
 
@@ -122,6 +166,11 @@ async function initApp() {
 const footer = document.querySelector('footer');
 
 document.querySelector('#search').addEventListener('input', (input) => {
+    
+    article.style.width = '100%';
+    card_container.style.width = '0%';
+    card_container.style.height = '0%';
+
     const searchText = input.target.value.trim();
     if (searchText === "") {
         footer.classList.remove('hide');

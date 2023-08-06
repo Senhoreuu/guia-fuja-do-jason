@@ -1,18 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap%27');
-
-:root {
-    --var-primary-color: #4B0082;
-    --var-second-color: #6702af;
-    --var-third-color: #990000;
-    --var-fourth-color: rgb(0, 0, 61);
-    --var-fifth-color: #FFD700;
-}
-
-body {
-    background-color: var(--var-primary-color);
-    font-family: 'Shadows Into Light', cursive;
-}
-
 nav {
     display: inline-flex;
     width: 100%;
@@ -43,6 +28,8 @@ article {
 
 header {
     display: inline-flex;
+    width: 100%;
+    height: 100%;
 }
 
 .card {
