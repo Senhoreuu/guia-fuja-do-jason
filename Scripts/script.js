@@ -14,16 +14,38 @@ function createTree(event) {
     const id = event.currentTarget.id;
     if (!rooms_name.includes(id)) return;
 
-    showAllCards(false);
     document.querySelector('footer').classList.add('hide');
 
     const connections = tree[id].rooms;
 
-    article.style.width = '0%';
-    card_container.style.width = '100%';
-    card_container.style.height = '100%';
+    setTimeout(() => {
+        console.log();
+        if (Number(article.style.opacity) < 0) {
+            createNewConnection(id, connections);
+            showAllCards(false);
+            return;
+        }
 
-    createNewConnection(id, connections);
+        const duration = 200;
+        let opacity = 1;
+        const intervalTime = 10;
+        const steps = duration / intervalTime;
+
+        const interval = setInterval(() => {
+            opacity -= 1 / steps;
+            article.style.opacity = opacity;
+
+            if (opacity <= 0) {
+                article.style.opacity = -1;
+                clearInterval(interval);
+                article.style.width = '0%';
+                card_container.style.width = '100%';
+                card_container.style.height = '100%';
+                showAllCards(false);
+                createNewConnection(id, connections);
+            }
+        }, intervalTime);
+    }, 100);
 }
 
 function createCard(room) {
@@ -116,6 +138,8 @@ function showAllCards(show = true) {
     });
 }
 
+const footer = document.querySelector('footer');
+
 async function initApp() {
     const rooms = await loadRooms();
 
@@ -130,15 +154,20 @@ async function initApp() {
         article.append(card);
     });
 
-    setTimeout(showCardsOnScroll, 1000);
+    footer.classList.add('hide');
+
+    setTimeout(() => {
+        showCardsOnScroll();
+        footer.classList.remove('hide');
+    }, 300);
+
     document.addEventListener('scroll', showCardsOnScroll);
 }
-
-const footer = document.querySelector('footer');
 
 document.querySelector('#search').addEventListener('input', (input) => {
 
     article.style.width = '100%';
+    article.style.opacity = 1;
     card_container.style.width = '0%';
     card_container.style.height = '0%';
 
@@ -161,7 +190,8 @@ function createNewConnection(id, connections) {
 
     for (const connection of connections) {
         const div = document.createElement('div');
-        div.classList.add('center');
+        div.classList.add('text');
+        setTimeout(() => div.classList.add('opacity'), 100);
         div.setAttribute('id', normalize(connection).toLowerCase());
 
         div.addEventListener('click', createTree);
@@ -177,7 +207,8 @@ function createNewConnection(id, connections) {
     const main = document.createElement('div');
     main.classList.add('main-root');
     const div_center = document.createElement('div');
-    div_center.classList.add('center');
+    div_center.classList.add('text');
+    setTimeout(() => div_center.classList.add('opacity'), 100);
     const h2 = document.createElement('h2');
     h2.innerText = id;
     const card_tree = document.createElement('div');

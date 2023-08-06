@@ -37,19 +37,24 @@
 
 .root {
     display: inline-flex;
-    align-items: center;
+    justify-content: center;
     flex-direction: row;
     gap: 20px;
+    width: 100%;
     height: 100%;
 }
 
-.center {
+.text {
     text-shadow: 0 0 10px var(--var-third-color), 0 0 20px var(--var-third-color), 0 0 30px var(--var-third-color), 0 0 40px var(--var-third-color), 0 0 70px var(--var-third-color), 0 0 90px var(--var-third-color);
     font-weight: 400;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
     font-size: 30px;
+    text-transform: capitalize;
+
+    opacity: 0;
+
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.opacity {
+    opacity: 1;
 }
