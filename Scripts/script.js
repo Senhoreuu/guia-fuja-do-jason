@@ -197,7 +197,7 @@ function createNewConnection(id, connections) {
         div.addEventListener('click', createTree);
 
         div.innerHTML = `<h2>${connection}</h2>
-                        <div  class="card-tree">
+                        <div class="card-tree">
                             <img src="./images/${normalize(connection).toLowerCase()}.png" class="tree-image">
                         </div>`;
 
@@ -215,6 +215,8 @@ function createNewConnection(id, connections) {
     card_tree.classList.add('card-tree');
     const img = document.createElement('img');
     img.src = `./images/${id}.png`;
+    img.style.padding = "padding: 1rem 1rem 1rem 1rem;";
+    img.style.width = "370px";
 
     card_tree.appendChild(img);
 
