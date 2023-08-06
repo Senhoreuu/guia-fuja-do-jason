@@ -18,38 +18,49 @@ function createTree(event) {
     document.querySelector('footer').classList.add('hide');
 
     const connections = tree[id].rooms;
-    
+
     article.style.width = '0%';
     card_container.style.width = '100%';
     card_container.style.height = '100%';
 
-    let root = '';
+    const root = document.createElement('div');
+    root.classList.add('root');
 
     for (const connection of connections) {
-        root += `<div class="center">
-                    <h2>${normalize(connection)}</h2>
-                    <div  class="card-tree">
-                        <img src="./images/${normalize(connection).toLowerCase()}.png" class="tree-image">
-                    </div>
-                </div>`;
+        const div = document.createElement('div');
+        div.classList.add('center');
+        div.setAttribute('id', normalize(connection).toLowerCase());
+
+        div.addEventListener('click', createTree);
+
+        div.innerHTML = `<h2>${connection}</h2>
+                        <div  class="card-tree">
+                            <img src="./images/${normalize(connection).toLowerCase()}.png" class="tree-image">
+                        </div>`;
+
+        root.appendChild(div);
     }
 
-    const html = ` 
-                    <div class="main-root">
-                        <div class="center">
-                            <h2>${id}</h2>
-                            <div class="card-tree">
-                                <img src="./images/${id}.png">
-                            </div>
-                        </div>
-                    </div>
+    const main = document.createElement('div');
+    main.classList.add('main-root');
+    const div_center = document.createElement('div');
+    div_center.classList.add('center');
+    const h2 = document.createElement('h2');
+    h2.innerText = id;
+    const card_tree = document.createElement('div');
+    card_tree.classList.add('card-tree');
+    const img = document.createElement('img');
+    img.src = `./images/${id}.png`;
 
-                    <div class="root">
-                        ${root}
-                    </div>
-                `;
+    card_tree.appendChild(img);
 
-    card_container.innerHTML = html;
+    div_center.appendChild(h2);
+    div_center.appendChild(card_tree);
+
+    main.appendChild(div_center);
+
+    card_container.appendChild(main);
+    card_container.appendChild(root);
 
     header.appendChild(card_container);
 }
