@@ -105,7 +105,7 @@ async function initApp() {
         article.append(card);
     });
 
-    setTimeout(showCardsOnScroll, 100);
+    setTimeout(showCardsOnScroll, 1000);
     document.addEventListener('scroll', showCardsOnScroll);
 }
 
