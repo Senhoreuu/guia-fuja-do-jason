@@ -227,6 +227,36 @@ function createNewConnection(id, connections) {
     card_container.appendChild(root);
 
     header.appendChild(card_container);
+
+    scrollToBottom()
 };
+
+function scrollToBottom() {
+    const docHeight = Math.max(
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight
+    );
+
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    const scrollDuration = 1000; // Duração da animação em milissegundos
+    const scrollStep = Math.PI / (scrollDuration / 15); // Incremento do scroll em cada intervalo
+
+    let scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+    const scrollInterval = setInterval(() => {
+        const currentPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (currentPosition >= docHeight - windowHeight) {
+            clearInterval(scrollInterval);
+        } else {
+            scrollPosition += scrollStep;
+            document.documentElement.scrollTop = scrollPosition;
+            document.body.scrollTop = scrollPosition;
+        }
+    }, 15);
+}
 
 initApp();
