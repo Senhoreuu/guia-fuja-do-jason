@@ -23,46 +23,7 @@ function createTree(event) {
     card_container.style.width = '100%';
     card_container.style.height = '100%';
 
-    const root = document.createElement('div');
-    root.classList.add('root');
-
-    for (const connection of connections) {
-        const div = document.createElement('div');
-        div.classList.add('center');
-        div.setAttribute('id', normalize(connection).toLowerCase());
-
-        div.addEventListener('click', createTree);
-
-        div.innerHTML = `<h2>${connection}</h2>
-                        <div  class="card-tree">
-                            <img src="./images/${normalize(connection).toLowerCase()}.png" class="tree-image">
-                        </div>`;
-
-        root.appendChild(div);
-    }
-
-    const main = document.createElement('div');
-    main.classList.add('main-root');
-    const div_center = document.createElement('div');
-    div_center.classList.add('center');
-    const h2 = document.createElement('h2');
-    h2.innerText = id;
-    const card_tree = document.createElement('div');
-    card_tree.classList.add('card-tree');
-    const img = document.createElement('img');
-    img.src = `./images/${id}.png`;
-
-    card_tree.appendChild(img);
-
-    div_center.appendChild(h2);
-    div_center.appendChild(card_tree);
-
-    main.appendChild(div_center);
-
-    card_container.appendChild(main);
-    card_container.appendChild(root);
-
-    header.appendChild(card_container);
+    createNewConnection(id, connections);
 }
 
 function createCard(room) {
@@ -157,7 +118,12 @@ function showAllCards(show = true) {
 
 async function initApp() {
     const rooms = await loadRooms();
-    const article = document.querySelector('article');
+
+    document.querySelector('.map').addEventListener('click', (e) => {
+        e.preventDefault();
+
+        window.location.href = 'https://caminhos-jason.vercel.app/';
+    });
 
     await fetch('./Rooms/ways_tree.json')
         .then(response => response.json())
@@ -177,7 +143,7 @@ async function initApp() {
 const footer = document.querySelector('footer');
 
 document.querySelector('#search').addEventListener('input', (input) => {
-    
+
     article.style.width = '100%';
     card_container.style.width = '0%';
     card_container.style.height = '0%';
@@ -192,5 +158,48 @@ document.querySelector('#search').addEventListener('input', (input) => {
         filterCards(searchText);
     }
 });
+
+function createNewConnection(id, connections) {
+    const root = document.createElement('div');
+    root.classList.add('root');
+
+    for (const connection of connections) {
+        const div = document.createElement('div');
+        div.classList.add('center');
+        div.setAttribute('id', normalize(connection).toLowerCase());
+
+        div.addEventListener('click', createTree);
+
+        div.innerHTML = `<h2>${connection}</h2>
+                        <div  class="card-tree">
+                            <img src="./images/${normalize(connection).toLowerCase()}.png" class="tree-image">
+                        </div>`;
+
+        root.appendChild(div);
+    }
+
+    const main = document.createElement('div');
+    main.classList.add('main-root');
+    const div_center = document.createElement('div');
+    div_center.classList.add('center');
+    const h2 = document.createElement('h2');
+    h2.innerText = id;
+    const card_tree = document.createElement('div');
+    card_tree.classList.add('card-tree');
+    const img = document.createElement('img');
+    img.src = `./images/${id}.png`;
+
+    card_tree.appendChild(img);
+
+    div_center.appendChild(h2);
+    div_center.appendChild(card_tree);
+
+    main.appendChild(div_center);
+
+    card_container.appendChild(main);
+    card_container.appendChild(root);
+
+    header.appendChild(card_container);
+};
 
 initApp();
