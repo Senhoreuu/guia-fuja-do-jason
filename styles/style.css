@@ -10,10 +10,16 @@ nav {
 }
 
 footer {
+    padding: 20px 0;
+    text-align: center;
+
     background-color: var(--var-fourth-color);
     height: 1em;
 
     margin-top: 30px;
+
+    font-size: 14px;
+    color: #888;
 }
 
 article {
