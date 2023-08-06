@@ -124,6 +124,12 @@ async function initApp() {
 
         window.location.href = 'https://caminhos-jason.vercel.app/';
     });
+    
+    document.querySelector('.hw-play').addEventListener('click', (e) => {
+        e.preventDefault();
+
+        window.location.href = 'https://caminhos-jason.vercel.app/pages/como_jogar.html';
+    });
 
     await fetch('./Rooms/ways_tree.json')
         .then(response => response.json())
