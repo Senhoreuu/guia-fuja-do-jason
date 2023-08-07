@@ -302,6 +302,9 @@ const getLog = (roomId, event, data) => {
     case 'getFollower':
       Room.getPlayerById(data.follower)?.gotoRoom(Number(data.room));
       break;
+    case 'mention':
+      Room.getPlayerByName(data.target)?.notification('RIMENTION', `${data.handler} lhe enviou uma mensagem: ${data.phrase}`);
+      break;
     default:
       Engine.log(event);
       break;
@@ -338,13 +341,6 @@ Events.on('say', (user, message) => {
     user.message(`Menção enviada para ${name}`);
 
     Events.sendMessageToRoom(roomId, 'mention', JSON.stringify({ handler: user.getUsername(), target: name, phrase }));
-  }
-});
-
-Events.on('serverMessage', (roomId, event, data) => {
-  if (event === 'mention') {
-    data = JSON.parse(data);
-    Room.getPlayerByName(data.target)?.message(`${data.handler} lhe enviou uma mensagem: ${data.phrase}`);
   }
 });
 
