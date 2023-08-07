@@ -14,12 +14,11 @@ function createTree(event) {
     const id = event.currentTarget.id;
     if (!rooms_name.includes(id)) return;
 
-    document.querySelector('footer').classList.add('hide');
+    // document.querySelector('footer').classList.add('hide');
 
     const connections = tree[id].rooms;
 
     setTimeout(() => {
-        console.log();
         if (Number(article.style.opacity) < 0) {
             createNewConnection(id, connections);
             showAllCards(false);
@@ -96,6 +95,7 @@ async function loadRooms() {
 
 function showCardsOnScroll() {
     const cards = document.querySelectorAll('div.card');
+
     cards.forEach((card) => {
         if (isElementInViewport(card)) {
             card.classList.add('show');
@@ -126,6 +126,7 @@ function filterCards(searching) {
 
 function showAllCards(show = true) {
     const cards = document.querySelectorAll('div.card');
+
     cards.forEach((card) => {
         if (show) {
             card.classList.remove('hide');
@@ -165,7 +166,6 @@ async function initApp() {
 }
 
 document.querySelector('#search').addEventListener('input', (input) => {
-
     article.style.width = '100%';
     article.style.opacity = 1;
     card_container.style.width = '0%';
